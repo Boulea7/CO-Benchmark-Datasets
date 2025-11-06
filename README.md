@@ -29,37 +29,10 @@ This repository provides a comprehensive collection of standardized, high-qualit
 
 These datasets are meticulously curated from multiple authoritative sources, processed into unified formats, and optimized for machine learning workflows, providing the research community with essential tools for developing and evaluating next-generation RL algorithms.
 
-## 📋 问题定义与数学建模
-
-### 图划分 (Graph Partitioning)
-**问题定义**: 将图 $G = (V, E)$ 的顶点集 $V$ 分割成 $k$ 个互不相交的子集 $V_1, V_2, \dots, V_k$
-
-**核心目标**:
-- **最小化切割边**: 最小化连接不同划分的边的数量或总权重
-- **平衡约束**: 要求每个划分的大小相近，确保工作负载均衡
-
-**归一化切割公式**:
-$$\text{NCut}(A, B) = \frac{\text{cut}(A, B)}{\text{vol}(A)} + \frac{\text{cut}(A, B)}{\text{vol}(B)}$$
-
-### 图着色 (Graph Coloring)
-**问题定义**: 为图 $G=(V, E)$ 的每个顶点分配颜色，使得相邻顶点具有不同颜色
-
-**主要目标**: 最小化所使用颜色的总数，即图的**色数** $\chi(G)$
-
-**等价表述**: 将顶点集 $V$ 划分为最少数目的**独立集**
-
-### 数值划分 (Number Partitioning)
-**问题定义**: 将正整数多重集 $S$ 分割成 $k$ 个子集 $S_1, S_2, \dots, S_k$
-
-**优化目标**: 最小化**最大完工时间**
-$$\min \left( \max_{i=1, \dots, k} \sum_{x \in S_i} x \right)$$
-
-**等价问题**: 并行机调度问题，目标是最小化所有任务完成的总时间
 
 ## 📚 Table of Contents
 
 - [Abstract](#-abstract)
-- [问题定义与数学建模](#-问题定义与数学建模)
 - [Key Features](#-key-features)
 - [Installation](#-installation)
 - [Quick Start](#-quick-start)
@@ -67,7 +40,6 @@ $$\min \left( \max_{i=1, \dots, k} \sum_{x \in S_i} x \right)$$
 - [Algorithm Baselines](#-algorithm-baselines)
 - [Data Sources](#-data-sources)
 - [Usage Guidelines](#-usage-guidelines)
-- [Performance Benchmarks](#-performance-benchmarks)
 - [Repository Structure](#-repository-structure)
 - [Code Standards](#-代码规范)
 - [License](#-license)
@@ -144,103 +116,40 @@ python3 scripts/example_usage.py
 
 ## 🤖 算法基准
 
-### 图划分 (Graph Partitioning)
-
-#### 核心算法
+### 图划分
 - **[GNN-A2C 多级优化方法](https://www.jmlr.org/papers/volume23/21-0644/21-0644.pdf)** (JMLR 2022)
-  - 结合经典多级框架和A2C算法，使用GraphSAGE GNN进行局部优化
-  - MDP建模：状态通过GNN编码，动作选择边界节点移动，奖励与NCut改善相关
-
 - **[Revolver](https://arxiv.org/abs/1907.06768)** (IEEE CLOUD 2018)
-  - 去中心化的多智能体方法，每个顶点作为独立智能体
-  - 基于Learning Automaton和标签传播的并行框架
-
-#### 前沿算法
 - **[NeuroCUT](https://arxiv.org/abs/2310.11787)** (2023)
-  - 支持任意k路划分和非可微目标的GNN+RL框架
-  - 参数空间与划分数量解耦，可泛化到未见过的划分数量
-
 - **[PR-GPT](https://arxiv.org/abs/2409.00670)** (2024)
-  - 预训练-微调范式，在小图上预训练，通过归纳推理快速泛化到大规模图
 
-- **[Graph RL Survey](https://arxiv.org/html/2404.06492v1)** (2024)
-  - 图强化学习在组合优化问题上的统一视角和系统性综述
-
-### 图着色 (Graph Coloring)
-
-#### 核心算法
+### 图着色
 - **[ReLCol](https://arxiv.org/abs/2304.04051)** (2023)
-  - 使用DQN+GNN学习构造式启发策略，学习顶点着色顺序
-  - MDP建模：状态为部分着色方案，动作选择下一个着色顶点，奖励基于新颜色数量
-
 - **[LOMAC](https://openreview.net/pdf?id=49a2a85d60c6055f0607ba775a412c10a87aa7a0)** (ICLR 2024)
-  - 通过状态空间重构将复杂度从O(K^N)降至O(N²)
-  - 使用伪节点增强GNN和基于势能的奖励函数
-
-#### 相关算法
 - **[GNN + DQN](https://arxiv.org/pdf/1903.04598)** (2019)
-  - 结合深度Q学习和GNN的启发式生成方法
-
 - **[MCTS + DRL](https://link.springer.com/article/10.1007/s10878-025-01338-8)** (2025)
-  - 蒙特卡洛树搜索与深度强化学习混合框架
 
-- **[Deep Learning + Memetic](https://www.sciencedirect.com/science/article/pii/S0950705122010796)** (2022)
-  - 深度学习指导模因算法的交叉操作
-
-### 数值划分 (Number Partitioning)
-
-#### 算法框架
-- **顺序决策模型**
-  - 按降序排列数字，训练RL智能体分配到子集
-  - 等价于并行机调度问题，目标是最小化最大完工时间
-
-#### 适用算法
-- **策略梯度方法**: REINFORCE, PPO
-  - 策略网络接收当前子集和状态，输出划分概率分布
-
-- **Q-Learning方法**: DQN
-  - Q网络学习数字分配到各划分的长期价值
-
-#### 相关论文
+### 数值划分
 - **[Neural CO with RL](https://arxiv.org/abs/1704.01916)** (2017)
-  - 神经组合优化的开创性工作，适用于数值划分等场景
-
 - **[RL for CO Survey](https://arxiv.org/abs/2003.03600)** (2020)
-  - RL在组合优化问题中的应用前景综述
-
 - **[RL for NP-hard](https://arxiv.org/abs/1905.06393)** (2019)
-  - 使用RL处理NP困难问题的通用方法
 
 ## 📚 数据集来源
 
-### 图划分 (Graph Partitioning)
+### 图划分
+- **[DIMACS10 图集](http://www.cc.gatech.edu/dimacs10/index.shtml)** - 第十届DIMACS实施挑战赛官方数据集
+- **[HypergraphPartitioning](https://github.com/TILOS-AI-Institute/HypergraphPartitioning)** - VLSI芯片设计领域基准
+- **[开放图基准 (OGB)](https://ogb.stanford.edu/)** - 现代化大规模图数据集
+- **[SuiteSparse](https://sparse.tamu.edu/)** - 科学计算稀疏矩阵结构图
+- **[SNAP 数据集](https://snap.stanford.edu/data/)** - 真实世界网络图
 
-| 数据集集合 | 描述 | 链接 |
-|-----------|------|------|
-| **[DIMACS10 图集](http://www.cc.gatech.edu/dimacs10/index.shtml)** | 第十届DIMACS实施挑战赛官方数据集，评估图划分与聚类算法的黄金标准 | [下载页面](https://www.cc.gatech.edu/dimacs10/downloads.shtml) |
-| **[HypergraphPartitioning](https://github.com/TILOS-AI-Institute/HypergraphPartitioning)** | VLSI芯片设计领域的超图/图划分基准，包含ISPD98和Titan23测试集 | [GitHub仓库](https://github.com/TILOS-AI-Institute/HypergraphPartitioning) |
-| **[开放图基准 (OGB)](https://ogb.stanford.edu/)** | 现代化大规模图数据集，专为图机器学习设计 | [官方网站](https://ogb.stanford.edu/) |
-| **[SuiteSparse](https://sparse.tamu.edu/)** | 科学计算中的稀疏矩阵结构图，数千个来自不同应用领域的矩阵 | [官方网站](https://sparse.tamu.edu/) |
-| **[SNAP 数据集](https://snap.stanford.edu/data/)** | 斯坦福网络分析项目的真实世界网络图，包含社交网络、引文网络等 | [官方网站](https://snap.stanford.edu/data/) |
-| **[Graph-Partitioning-Benchmark](https://github.com/dbafemi/graph-partitioning-benchmark)** | 专为分布式图数据库划分算法评估设计，包含合成图生成器 | [GitHub仓库](https://github.com/dbafemi/graph-partitioning-benchmark) |
+### 图着色
+- **[DIMACS & COLOR02/03/04](https://mat.tepper.cmu.edu/COLOR/instances.html)** - 图着色算法权威标准
+- **[ROARS Benchmark](https://roars.dev/npbench/graphcoloring.html)** - 格式齐全的图着色基准
+- **[Network Repository](https://networkrepository.com/dimacs.php)** - 真实世界和合成网络
 
-### 图着色 (Graph Coloring)
-
-| 数据集集合 | 描述 | 链接 |
-|-----------|------|------|
-| **[DIMACS & COLOR02/03/04](https://mat.tepper.cmu.edu/COLOR/instances.html)** | 图着色算法性能评估最权威标准，包含随机图、几何图、寄存器分配图等 | [CMU官方页面](https://mat.tepper.cmu.edu/COLOR/instances.html) |
-| **[ROARS Benchmark](https://roars.dev/npbench/graphcoloring.html)** | 格式齐全的图着色基准，提供多种经典实例 | [ROARS页面](https://roars.dev/npbench/graphcoloring.html) |
-| **[Network Repository](https://networkrepository.com/dimacs.php)** | 真实世界和合成网络数据仓库，包含DIMACS图着色子集 | [DIMACS子集](https://networkrepository.com/dimacs.php) |
-| **[Graph Coloring with RL](https://github.com/gpdwatkins/graph_colouring_with_RL)** | 专为RL图着色研究提供的数据集和代码仓库 | [GitHub仓库](https://github.com/gpdwatkins/graph_colouring_with_RL) |
-
-### 数值划分 (Number Partitioning)
-
-| 数据集/生成器 | 描述 | 链接 |
-|-------------|------|------|
-| **[Pedroso & Kubo NPP](https://www.dcc.fc.up.pt/~jpp/partition/readme.html)** | 基于"易-难-易"相变现象生成的标准实例，分为easy和hard两类 | [数据源](https://www.dcc.fc.up.pt/~jpp/partition/readme.html) |
-| **[Mertens (2003) 理论](https://arxiv.org/pdf/cond-mat/0310317)** | 数值划分问题难度相变现象的理论分析，指导生成有意义的测试实例 | [论文链接](https://arxiv.org/pdf/cond-mat/0310317) |
-| **[Tracer NPP](http://tracer.lcc.uma.es/problems/npp/npp.html)** | 程序化生成器说明，提供问题描述和生成思路 | [问题说明](http://tracer.lcc.uma.es/problems/npp/npp.html) |
-| **[程序化生成器](https://github.com/Boulea7/CO-Benchmark-Datasets/blob/main/processed/number_partitioning/generate_npp_instances.py)** | 本项目内置生成器，支持自定义参数生成整数集 | [生成器代码](scripts/generate_npp_instances.py) |
+### 数值划分
+- **[Pedroso & Kubo NPP](https://www.dcc.fc.up.pt/~jpp/partition/readme.html)** - 基于相变现象的标准实例
+- **[Mertens (2003) 理论](https://arxiv.org/pdf/cond-mat/0310317)** - 难度相变现象理论分析
 
 ## 📖 使用指南
 

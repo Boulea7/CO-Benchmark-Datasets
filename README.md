@@ -2,49 +2,68 @@
 
 # 🚀 CO-Benchmark-Datasets
 
+**Comprehensive Benchmark Datasets for Reinforcement Learning in Combinatorial Optimization**
+
 [![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://github.com/Boulea7/CO-Benchmark-Datasets)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
 [![Issues](https://img.shields.io/github/issues/Boulea7/CO-Benchmark-Datasets)](https://github.com/Boulea7/CO-Benchmark-Datasets/issues)
 [![Size](https://img.shields.io/github/repo-size/Boulea7/CO-Benchmark-Datasets)](https://github.com/Boulea7/CO-Benchmark-Datasets)
+[![Dataset Size](https://img.shields.io/badge/datasets-447%20files-orange.svg)]()
 
-## 🧠 强化学习在组合优化中的基准测试数据集
+## 🎯 Research Focus: NP-Hard Combinatorial Optimization Problems
 
-### 聚焦于图划分、数值划分与图着色三大经典NP-Hard问题
+**Specialized benchmark datasets for advancing reinforcement learning algorithms in classical NP-Hard problems**
 
 </div>
 
 ---
 
-## 📖 项目简介
+## 📋 Abstract
 
-本项目为强化学习算法在组合优化问题上的应用提供标准化、高质量的数据集，涵盖三个经典的NP-Hard问题：
+This repository provides a comprehensive collection of standardized, high-quality benchmark datasets specifically designed for evaluating reinforcement learning algorithms on classical combinatorial optimization problems. Our benchmark suite focuses on three fundamental NP-Hard problems that serve as critical testbeds for algorithmic innovation:
 
-- 🔄 **图划分（Graph Partitioning）** - 最小化切割边与平衡约束
-- 🎨 **图着色（Graph Coloring）** - 最小化颜色数与避免冲突
-- 🔢 **数值划分（Number Partitioning）** - 均衡分配与最小化最大完工时间
+- 🔄 **Graph Partitioning** - Minimize cut edges while maintaining balance constraints
+- 🎨 **Graph Coloring** - Minimize chromatic number while avoiding adjacent conflicts
+- 🔢 **Number Partitioning** - Balance subset assignments to minimize maximum completion time
 
-## 📋 目录
+These datasets are meticulously curated from multiple authoritative sources, processed into unified formats, and optimized for machine learning workflows, providing the research community with essential tools for developing and evaluating next-generation RL algorithms.
 
-- [项目特点](#-项目特点)
-- [项目结构](#-项目结构)
-- [快速开始](#-快速开始)
-- [数据集概览](#-数据集概览)
-- [算法基准](#-算法基准)
-- [数据集来源](#-数据集来源)
-- [使用指南](#-使用指南)
-- [项目状态](#-项目状态)
-- [贡献指南](#-贡献指南)
-- [许可证](#-许可证)
-- [致谢](#-致谢)
+## 📚 Table of Contents
 
-## ✨ 项目特点
+- [Abstract](#-abstract)
+- [Key Features](#-key-features)
+- [Installation](#-installation)
+- [Quick Start](#-quick-start)
+- [Dataset Overview](#-dataset-overview)
+- [Algorithm Baselines](#-algorithm-baselines)
+- [Data Sources](#-data-sources)
+- [Usage Guidelines](#-usage-guidelines)
+- [Performance Benchmarks](#-performance-benchmarks)
+- [Repository Structure](#-repository-structure)
+- [Contributing](#-contributing)
+- [Citation](#-citation)
+- [License](#-license)
+- [Acknowledgments](#-acknowledgments)
 
-- **标准化格式**：所有数据集都转换为统一的文本格式，便于加载和处理
-- **按规模分类**：数据集按规模（tiny/small/medium/large/xlarge）分类，便于选择
-- **压缩存储**：提供压缩版本，显著减少存储空间
-- **元数据丰富**：每个数据集都包含详细的元数据信息
-- **多来源**：整合了多个权威数据集来源，提高多样性
-- **统一加载器**：提供智能的数据加载工具，支持压缩文件和自动问题识别
+## ✨ Key Features
+
+### 🔧 **Technical Excellence**
+- **Unified Format Standard**: All datasets converted to consistent text format following RLSolver competition specifications
+- **Scalable Size Classification**: Systematic categorization (tiny/small/medium/large/xlarge) for progressive algorithm development
+- **High Compression Ratio**: Average 88.9% compression efficiency while maintaining data integrity
+- **Rich Metadata Infrastructure**: Comprehensive problem specifications, source provenance, and difficulty annotations
+
+### 🚀 **ML-Ready Infrastructure**
+- **Automated Data Loading**: Intelligent loaders with format detection and preprocessing capabilities
+- **LFS Integration**: Git Large File Storage support for efficient version control of large datasets
+- **Batch Processing Support**: Optimized for training pipelines with parallel loading capabilities
+- **Cross-Platform Compatibility**: Python 3.8+ support with minimal dependencies
+
+### 📊 **Research-Grade Quality**
+- **Multiple Authoritative Sources**: Datasets from DIMACS challenges, academic benchmarks, and real-world networks
+- **Balanced Problem Distribution**: Careful selection across difficulty spectra and structural characteristics
+- **Reproducible Results**: Deterministic loading and processing ensuring experimental consistency
 
 ## 📁 项目结构
 
@@ -143,6 +162,45 @@ python3 scripts/example_usage.py
 - [`processed/graph_partitioning/README.md`](processed/graph_partitioning/README.md)：图划分数据集说明
 - [`processed/graph_coloring/README.md`](processed/graph_coloring/README.md)：图着色数据集说明
 - [`processed/number_partitioning/README.md`](processed/number_partitioning/README.md)：数值划分数据集说明
+
+## 💻 代码规范
+
+### 注释语言标准
+本项目统一使用**中文**作为所有代码注释和文档的语言，确保：
+
+- **可读性**：中文注释便于中文开发者理解和维护代码
+- **一致性**：所有Python脚本、Shell脚本和文档都采用中文注释
+- **专业性**：保持技术术语的准确性，同时使用中文进行说明
+
+#### 注释示例
+```python
+def mk_data(n, nbits):
+    """生成数值划分的随机数据：使用具有 'nbits' 位的整数"""
+    data = []
+    for i in range(n):
+        # 构建具有指定位数的随机整数
+        value = 0
+        for b in range(nbits):
+            if random.random() >= 0.5:
+                value += 2**b
+        data.append(value)
+    return data
+```
+
+```bash
+#!/bin/bash
+# 数据集压缩脚本
+# 使用多进程并行处理以提高效率
+
+echo "开始压缩数据集..."
+```
+
+### 贡献者须知
+当向本项目贡献代码时，请确保：
+1. 所有函数和类的docstring使用中文
+2. 行内注释使用中文说明代码逻辑
+3. 脚本文件的头部说明使用中文
+4. 保持与现有代码风格的一致性
 
 ## 📈 项目状态
 

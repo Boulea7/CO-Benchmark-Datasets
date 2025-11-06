@@ -2,10 +2,10 @@
 
 # 🚀 CO-Benchmark-Datasets
 
-[![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://github.com/jialinli/CO-Benchmark-Datasets)
+[![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://github.com/Boulea7/CO-Benchmark-Datasets)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Issues](https://img.shields.io/github/issues/jialinli/CO-Benchmark-Datasets)](https://github.com/jialinli/CO-Benchmark-Datasets/issues)
-[![Size](https://img.shields.io/github/repo-size/jialinli/CO-Benchmark-Datasets)](https://github.com/jialinli/CO-Benchmark-Datasets)
+[![Issues](https://img.shields.io/github/issues/Boulea7/CO-Benchmark-Datasets)](https://github.com/Boulea7/CO-Benchmark-Datasets/issues)
+[![Size](https://img.shields.io/github/repo-size/Boulea7/CO-Benchmark-Datasets)](https://github.com/Boulea7/CO-Benchmark-Datasets)
 
 ## 🧠 强化学习在组合优化中的基准测试数据集
 

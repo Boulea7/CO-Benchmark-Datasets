@@ -2,7 +2,7 @@
 
 # 🚀 CO-Benchmark-Datasets
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/jialinli/CO-Benchmark-Datasets)
+[![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://github.com/jialinli/CO-Benchmark-Datasets)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Issues](https://img.shields.io/github/issues/jialinli/CO-Benchmark-Datasets)](https://github.com/jialinli/CO-Benchmark-Datasets/issues)
 [![Size](https://img.shields.io/github/repo-size/jialinli/CO-Benchmark-Datasets)](https://github.com/jialinli/CO-Benchmark-Datasets)
@@ -155,6 +155,7 @@ python3 scripts/example_usage.py
 - [x] 统一数据加载器开发
 - [x] 文档整理和优化
 - [x] 大文件分块处理（GitHub 文件大小限制合规）
+- [x] 项目清理工作（添加.claude到.gitignore，清理.DS_Store文件）
 - [ ] 训练/验证/测试集划分
 - [ ] 基线算法实现和测试
 - [ ] 性能基准测试
@@ -195,7 +196,7 @@ python3 scripts/example_usage.py
 
 <div align="center">
 
-**当前版本：1.0.0 (2025-11-06)**
+**当前版本：1.0.1 (2025-11-06)**
 
 详细变更记录请参考：[`NextList.md`](NextList.md)
 

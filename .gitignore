@@ -151,12 +151,15 @@ raw/graph_partitioning/DIMACS10/Frames from 2D Dynamic Simulations/hugebubbles-0
 processed/graph_partitioning/compressed/xlarge/nlpkkt240.txt.gzip
 processed/graph_partitioning/compressed/xlarge/nlpkkt240.txt.gzip.parts/
 
-# Archive files
+# Archive files (exclude dataset files)
 *.tar.gz
 *.tar.bz2
 *.zip
 *.bz2
-*.xz
+
+# Allow dataset files in processed directory
+!processed/**/*.xz
+!processed/**/*.txt.gz
 
 # Documentation files (don't commit to repo)
 DatabaseChoice.md

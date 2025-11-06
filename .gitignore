@@ -1,0 +1,167 @@
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+
+# C extensions
+*.c
+
+# Compiled static assets
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+raw/
+
+# Large files that exceed Git LFS limits (specific exclusions)
+# Even though raw/ is ignored, be explicit about very large files
+raw/graph_partitioning/DIMACS10/Erdös-Rényi Graphs/er-fact1.5-scale26.graph.bz2
+raw/graph_partitioning/DIMACS10/Erdös-Rényi Graphs/er-fact1.5-scale24.graph.bz2
+raw/graph_partitioning/DIMACS10/Sparse Matrices/nlpkkt240.graph.bz2
+raw/graph_partitioning/DIMACS10/Erdös-Rényi Graphs/er-fact1.5-scale23.graph.bz2
+raw/graph_partitioning/DIMACS10/Erdös-Rényi Graphs/er-fact1.5-scale25.graph.*
+raw/graph_partitioning/DIMACS10/Kronecker (Graph500)/kron_g500-simple-logn21.graph.bz2
+raw/graph_partitioning/SuiteSparse/Large/audikw_1.tar.gz
+raw/graph_partitioning/DIMACS10/Sparse Matrices/nlpkkt200.graph.bz2
+raw/graph_partitioning/DIMACS10/Erdös-Rényi Graphs/er-fact1.5-scale22.graph.bz2
+raw/graph_partitioning/DIMACS10/Random Geometric Graphs/rgg_n_2_24_s0.graph.bz2
+raw/graph_partitioning/DIMACS10/Street Networks/europe.osm.graph.bz2
+raw/graph_partitioning/SuiteSparse/Large/ldoor.tar.gz
+raw/graph_partitioning/SuiteSparse/Large/inline_1.tar.gz
+raw/graph_partitioning/DIMACS10/Delaunay Graphs/delaunay_n24.graph.bz2
+raw/graph_partitioning/DIMACS10/Kronecker (Graph500)/kron_g500-simple-logn20.graph.bz2
+raw/graph_partitioning/DIMACS10/Frames from 2D Dynamic Simulations/hugebubbles-00020.graph.bz2
+
+# Archive files
+*.tar.gz
+*.tar.bz2
+*.zip
+*.bz2
+*.xz
+
+# Documentation files (don't commit to repo)
+DatabaseChoice.md
+GPTinstruction.md
+NextList.md
+Report.md
+Todolist.md
+
+# Cache and temporary files
+scripts/__pycache__/
+*.pkl
+compression_state.pkl
+compression_output.log

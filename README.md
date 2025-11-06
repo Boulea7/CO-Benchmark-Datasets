@@ -2,67 +2,66 @@
 
 # 🚀 CO-Benchmark-Datasets
 
-**Comprehensive Benchmark Datasets for Reinforcement Learning in Combinatorial Optimization**
+**强化学习在组合优化问题中的综合基准数据集**
 
-[![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://github.com/Boulea7/CO-Benchmark-Datasets)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![版本](https://img.shields.io/badge/版本-1.0.1-blue.svg)](https://github.com/Boulea7/CO-Benchmark-Datasets)
+[![许可证](https://img.shields.io/badge/许可证-MIT-green.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
-[![Issues](https://img.shields.io/github/issues/Boulea7/CO-Benchmark-Datasets)](https://github.com/Boulea7/CO-Benchmark-Datasets/issues)
-[![Size](https://img.shields.io/github/repo-size/Boulea7/CO-Benchmark-Datasets)](https://github.com/Boulea7/CO-Benchmark-Datasets)
-[![Dataset Size](https://img.shields.io/badge/datasets-447%20files-orange.svg)]()
+[![问题](https://img.shields.io/github/issues/Boulea7/CO-Benchmark-Datasets)](https://github.com/Boulea7/CO-Benchmark-Datasets/issues)
+[![大小](https://img.shields.io/github/repo-size/Boulea7/CO-Benchmark-Datasets)](https://github.com/Boulea7/CO-Benchmark-Datasets)
+[![数据集](https://img.shields.io/badge/数据集-447%20个文件-orange.svg)]()
 
-## 🎯 Research Focus: NP-Hard Combinatorial Optimization Problems
+## 🎯 研究重点：NP-Hard组合优化问题
 
-**Specialized benchmark datasets for advancing reinforcement learning algorithms in classical NP-Hard problems**
+**专为推进强化学习算法在经典NP-Hard问题中的应用而设计的专业基准数据集**
 
 </div>
 
 ---
 
-## 📋 Abstract
+## 📋 摘要
 
-This repository provides a comprehensive collection of standardized, high-quality benchmark datasets specifically designed for evaluating reinforcement learning algorithms on classical combinatorial optimization problems. Our benchmark suite focuses on three fundamental NP-Hard problems that serve as critical testbeds for algorithmic innovation:
+本仓库提供了一套全面的标准化、高质量基准数据集，专门用于评估强化学习算法在经典组合优化问题上的性能。我们的基准测试套件专注于三个基本的NP-Hard问题，这些问题是算法创新的关键测试平台：
 
-- 🔄 **Graph Partitioning** - Minimize cut edges while maintaining balance constraints
-- 🎨 **Graph Coloring** - Minimize chromatic number while avoiding adjacent conflicts
-- 🔢 **Number Partitioning** - Balance subset assignments to minimize maximum completion time
+- 🔄 **图划分** - 在保持平衡约束的同时最小化切割边
+- 🎨 **图着色** - 最小化色数同时避免相邻冲突
+- 🔢 **数值划分** - 平衡子集分配以最小化最大完成时间
 
-These datasets are meticulously curated from multiple authoritative sources, processed into unified formats, and optimized for machine learning workflows, providing the research community with essential tools for developing and evaluating next-generation RL algorithms.
+这些数据集经过精心策划，来自多个权威来源，处理成统一格式，并为机器学习工作流程进行了优化，为研究和评估下一代强化学习算法提供了重要工具。
 
 
-## 📚 Table of Contents
+## 📚 目录
 
-- [Abstract](#-abstract)
-- [Key Features](#-key-features)
-- [Installation](#-installation)
-- [Quick Start](#-quick-start)
-- [Dataset Overview](#-dataset-overview)
-- [Algorithm Baselines](#-algorithm-baselines)
-- [Data Sources](#-data-sources)
-- [Usage Guidelines](#-usage-guidelines)
-- [Repository Structure](#-repository-structure)
-- [Code Standards](#-代码规范)
-- [License](#-license)
-- [Acknowledgments](#-acknowledgments)
+- [摘要](#-摘要)
+- [主要特点](#-主要特点)
+- [安装](#-安装)
+- [快速开始](#-快速开始)
+- [数据集概览](#-数据集概览)
+- [算法基准](#-算法基准)
+- [数据集来源](#-数据集来源)
+- [使用指南](#-使用指南)
+- [项目结构](#-项目结构)
+- [许可证](#-许可证)
+- [致谢](#-致谢)
 
-## ✨ Key Features
+## ✨ 主要特点
 
-### 🔧 **Technical Excellence**
-- **Unified Format Standard**: All datasets converted to consistent text format following RLSolver competition specifications
-- **Scalable Size Classification**: Systematic categorization (tiny/small/medium/large/xlarge) for progressive algorithm development
-- **High Compression Ratio**: Average 88.9% compression efficiency while maintaining data integrity
-- **Rich Metadata Infrastructure**: Comprehensive problem specifications, source provenance, and difficulty annotations
+### 🔧 **技术卓越**
+- **统一格式标准**：所有数据集转换为符合RLSolver竞赛规范的一致文本格式
+- **可扩展规模分类**：系统性分类（tiny/small/medium/large/xlarge），便于渐进式算法开发
+- **高压缩比**：平均88.9%的压缩效率，同时保持数据完整性
+- **丰富元数据基础**：全面的问题规范、来源证明和难度标注
 
-### 🚀 **ML-Ready Infrastructure**
-- **Automated Data Loading**: Intelligent loaders with format detection and preprocessing capabilities
-- **LFS Integration**: Git Large File Storage support for efficient version control of large datasets
-- **Batch Processing Support**: Optimized for training pipelines with parallel loading capabilities
-- **Cross-Platform Compatibility**: Python 3.8+ support with minimal dependencies
+### 🚀 **机器学习就绪基础设施**
+- **自动数据加载**：具有格式检测和预处理能力的智能加载器
+- **LFS集成**：Git大文件存储支持，高效版本控制大型数据集
+- **批处理支持**：为训练管道优化，支持并行加载
+- **跨平台兼容性**：Python 3.8+支持，依赖最少
 
-### 📊 **Research-Grade Quality**
-- **Multiple Authoritative Sources**: Datasets from DIMACS challenges, academic benchmarks, and real-world networks
-- **Balanced Problem Distribution**: Careful selection across difficulty spectra and structural characteristics
-- **Reproducible Results**: Deterministic loading and processing ensuring experimental consistency
+### 📊 **研究级质量**
+- **多个权威来源**：来自DIMACS挑战赛、学术基准和真实世界网络的数据集
+- **平衡问题分布**：精心选择跨越难度谱和结构特征的问题
+- **可重现结果**：确定性加载和处理确保实验一致性
 
 ## 📁 项目结构
 
@@ -160,45 +159,6 @@ python3 scripts/example_usage.py
 - [`processed/graph_partitioning/README.md`](processed/graph_partitioning/README.md)：图划分数据集说明
 - [`processed/graph_coloring/README.md`](processed/graph_coloring/README.md)：图着色数据集说明
 - [`processed/number_partitioning/README.md`](processed/number_partitioning/README.md)：数值划分数据集说明
-
-## 💻 代码规范
-
-### 注释语言标准
-本项目统一使用**中文**作为所有代码注释和文档的语言，确保：
-
-- **可读性**：中文注释便于中文开发者理解和维护代码
-- **一致性**：所有Python脚本、Shell脚本和文档都采用中文注释
-- **专业性**：保持技术术语的准确性，同时使用中文进行说明
-
-#### 注释示例
-```python
-def mk_data(n, nbits):
-    """生成数值划分的随机数据：使用具有 'nbits' 位的整数"""
-    data = []
-    for i in range(n):
-        # 构建具有指定位数的随机整数
-        value = 0
-        for b in range(nbits):
-            if random.random() >= 0.5:
-                value += 2**b
-        data.append(value)
-    return data
-```
-
-```bash
-#!/bin/bash
-# 数据集压缩脚本
-# 使用多进程并行处理以提高效率
-
-echo "开始压缩数据集..."
-```
-
-### 贡献者须知
-当向本项目贡献代码时，请确保：
-1. 所有函数和类的docstring使用中文
-2. 行内注释使用中文说明代码逻辑
-3. 脚本文件的头部说明使用中文
-4. 保持与现有代码风格的一致性
 
 ## 📄 许可证
 

@@ -147,6 +147,10 @@ raw/graph_partitioning/DIMACS10/Delaunay Graphs/delaunay_n24.graph.bz2
 raw/graph_partitioning/DIMACS10/Kronecker (Graph500)/kron_g500-simple-logn20.graph.bz2
 raw/graph_partitioning/DIMACS10/Frames from 2D Dynamic Simulations/hugebubbles-00020.graph.bz2
 
+# Large processed files that exceed GitHub limits
+processed/graph_partitioning/compressed/xlarge/nlpkkt240.txt.gzip
+processed/graph_partitioning/compressed/xlarge/nlpkkt240.txt.gzip.parts/
+
 # Archive files
 *.tar.gz
 *.tar.bz2
